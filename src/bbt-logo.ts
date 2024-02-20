@@ -1,6 +1,6 @@
 import BtcLogo from "./btc-logo";
 
-type Properties = {
+export type Properties = {
   size?: string 
   fill?: string
   stroke?: string
@@ -30,19 +30,18 @@ const BbtLogo = class extends HTMLElement {
   attributeChangedCallback(name: string, _oldValue: string, newValue: string) {
     const shadow = this.shadowRoot;
     const wrapper = shadow?.querySelector('wrapper')
-    const firehouse = shadow?.querySelector('firehouse')
+    const lighthouse = shadow?.querySelector('lighthouse')
     switch(name) {
       case 'size': {
-        wrapper?.setAttribute('width', newValue || DEFAULT_SIZE)
-        wrapper?.setAttribute('height', newValue || DEFAULT_SIZE)
+        wrapper?.setAttribute('style', '{width: newValue || DEFAULT_SIZE, height: newValue || DEFAULT_SIZE}')
         break;
       }
       case 'fill': {
-        firehouse?.setAttribute('fill', newValue || DEFAULT_FILL)
+        lighthouse?.setAttribute('fill', newValue || DEFAULT_FILL)
         break;
       }
       case 'stroke': {
-        firehouse?.setAttribute('stroke', newValue || DEFAULT_STROKE)
+        lighthouse?.setAttribute('stroke', newValue || DEFAULT_STROKE)
         break;
       }
     }
@@ -56,12 +55,12 @@ const BbtLogo = class extends HTMLElement {
     const bg = document.createElement('div')
     bg.setAttribute('class', 'bg')
 
-    const firehouse = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    firehouse.setAttribute('width', '100%')
-    firehouse.setAttribute('height', '100%')
-    firehouse.setAttribute('viewBox', '0 0 37.041667 37.041667')
-    firehouse.setAttribute('class', 'firehouse')
-    firehouse.innerHTML = `<g transform='translate(-10.311717,-4.1193979)'>
+    const lighthouse = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    lighthouse.setAttribute('width', '100%')
+    lighthouse.setAttribute('height', '100%')
+    lighthouse.setAttribute('viewBox', '0 0 37.041667 37.041667')
+    lighthouse.setAttribute('class', 'lighthouse')
+    lighthouse.innerHTML = `<g transform='translate(-10.311717,-4.1193979)'>
       <rect
         style='stroke-width:0.453158;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:normal'
         stroke='currentColor'
@@ -180,7 +179,7 @@ const BbtLogo = class extends HTMLElement {
         animation: lightfire-rotate 5s linear infinite;
       }
 
-      .firehouse {
+      .lighthouse {
         position: absolute;
         inset: 0;
         z-index: 3;
@@ -203,7 +202,7 @@ const BbtLogo = class extends HTMLElement {
     // Attach styles + created elements to the shadow dom
     wrapper.appendChild(style);
     wrapper.appendChild(bg);
-    wrapper.appendChild(firehouse);
+    wrapper.appendChild(lighthouse);
     wrapper.appendChild(btcLogo);
 
     const shadowRoot = this.attachShadow({mode: 'open'});
