@@ -10,7 +10,7 @@ const meta = {
   render: ({size, fill, stroke}) => html`<bbt-logo size=${ifDefined(size)} stroke=${ifDefined(stroke)} fill=${ifDefined(fill)} />`,
   tags: ['autodocs'],
   argTypes: {
-    size: { control: 'string' },
+    size: { type: 'string' },
     fill: { control: 'color' },
     stroke: { control: 'color' },
   },
