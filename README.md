@@ -4,6 +4,12 @@ Animated logo of Bitcoin Beach Travemünde provided as a web component.
 
 ![Alt text](./bbt-logo-webcomponent.png?raw=true "Preview")
 
+
+
+https://github.com/BitcoinBeachTravemuende/bbt-logo-webcomponent/assets/47693/0e14e78b-0cd2-4d10-bea5-7ce62b67356b
+
+
+
 ## Features
 
 - Customize size and colors as you like. 
