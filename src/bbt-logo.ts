@@ -1,6 +1,6 @@
 import BtcLogo from "./btc-logo";
 
-type Properties = {
+export type Properties = {
   size?: string 
   fill?: string
   stroke?: string
@@ -33,8 +33,7 @@ const BbtLogo = class extends HTMLElement {
     const firehouse = shadow?.querySelector('firehouse')
     switch(name) {
       case 'size': {
-        wrapper?.setAttribute('width', newValue || DEFAULT_SIZE)
-        wrapper?.setAttribute('height', newValue || DEFAULT_SIZE)
+        wrapper?.setAttribute('style', '{width: newValue || DEFAULT_SIZE, height: newValue || DEFAULT_SIZE}')
         break;
       }
       case 'fill': {
