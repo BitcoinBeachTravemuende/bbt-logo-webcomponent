@@ -1,5 +1,7 @@
 import BtcLogo from "./btc-logo";
 
+const HTMLElement = globalThis.HTMLElement || (null as unknown as typeof window['HTMLElement'])
+
 export type Properties = {
   size?: string 
   fill?: string

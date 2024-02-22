@@ -26,18 +26,18 @@ class c extends HTMLElement {
   }
 }
 customElements.define("btc-logo", c);
-const u = [
+const u = globalThis.HTMLElement || null, y = [
   "size",
   "fill",
   "stroke"
-], l = "140px", d = "black", n = "white", y = class extends HTMLElement {
+], l = "140px", d = "black", n = "white", C = class extends u {
   constructor() {
     super();
     a(this, "shadowRoot");
     this.shadowRoot = this.attachShadow({ mode: "open" });
   }
   static get observedAttributes() {
-    return [...u];
+    return [...y];
   }
   attributeChangedCallback(t, o, r) {
     if (o === r)
@@ -198,7 +198,7 @@ const u = [
     `, t.appendChild(e), t.appendChild(o), t.appendChild(r), t.appendChild(s), this.shadowRoot.appendChild(t);
   }
 };
-customElements.define("bbt-logo", y);
+customElements.define("bbt-logo", C);
 export {
-  y as default
+  C as default
 };
