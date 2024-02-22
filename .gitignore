@@ -10,9 +10,14 @@ lerna-debug.log*
 package-lock.json
 
 node_modules
-dist
 
-types
+dist/*
+# TODO remove it before merging
+!dist/index.js
+
+types/*
+# TODO remove it before merging
+!types/bbt-logo.d.ts
 
 .direnv
 
