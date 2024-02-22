@@ -16,10 +16,13 @@ const DEFAULT_SIZE = '140px'
 const DEFAULT_STROKE = 'black'
 const DEFAULT_FILL = 'white'
 
-const BbtLogo = class extends HTMLElement {
+const BBTLogo = class extends HTMLElement {
+
+  shadowRoot: ShadowRoot;
+
   constructor() {
     super();
-
+    this.shadowRoot = this.attachShadow({mode: 'open'});
   }
 
   static get observedAttributes(): string[] {
@@ -27,10 +30,12 @@ const BbtLogo = class extends HTMLElement {
   }
 
 
-  attributeChangedCallback(name: string, _oldValue: string, newValue: string) {
-    const shadow = this.shadowRoot;
-    const wrapper = shadow?.querySelector('wrapper')
-    const lighthouse = shadow?.querySelector('lighthouse')
+  attributeChangedCallback(name: string, oldValue: string, newValue: string) {
+    // dirty check
+    if (oldValue === newValue) return
+
+    const wrapper = this.shadowRoot.querySelector('wrapper')
+    const lighthouse = this.shadowRoot.querySelector('lighthouse')
     switch(name) {
       case 'size': {
         wrapper?.setAttribute('style', '{width: newValue || DEFAULT_SIZE, height: newValue || DEFAULT_SIZE}')
@@ -205,11 +210,17 @@ const BbtLogo = class extends HTMLElement {
     wrapper.appendChild(lighthouse);
     wrapper.appendChild(btcLogo);
 
-    const shadowRoot = this.attachShadow({mode: 'open'});
-    shadowRoot.appendChild(wrapper);
+    this.shadowRoot.appendChild(wrapper);
   }
 }
 
-customElements.define('bbt-logo', BbtLogo)
+customElements.define('bbt-logo', BBTLogo)
 
-export default BbtLogo
+export default BBTLogo
+
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "bbt-logo": typeof BBTLogo;
+  }
+}

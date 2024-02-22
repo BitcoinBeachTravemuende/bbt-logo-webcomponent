@@ -12,6 +12,8 @@ package-lock.json
 node_modules
 dist
 
+types
+
 .direnv
 
 # Editor directories and files

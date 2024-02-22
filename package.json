@@ -1,14 +1,21 @@
 {
-  "name": "bbt-logo-webcomponent",
-  "private": true,
-  "version": "0.0.0",
+  "name": "bbt-logo",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "type": "module",
+  "types": "types/bbt-logo.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.17",
