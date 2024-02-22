@@ -12,12 +12,8 @@ package-lock.json
 node_modules
 
 dist/*
-# TODO remove it before merging
-!dist/index.js
 
 types/*
-# TODO remove it before merging
-!types/bbt-logo.d.ts
 
 .direnv
 
