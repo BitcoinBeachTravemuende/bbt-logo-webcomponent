@@ -6,8 +6,8 @@
   "type": "module",
   "types": "types/bbt-logo.d.ts",
   "files": [
-    "dist",
-    "types"
+    "/dist/index.js",
+    "/types/bbt-logo.d.ts"
   ],
   "scripts": {
     "dev": "vite",
