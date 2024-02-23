@@ -14,7 +14,7 @@ https://github.com/BitcoinBeachTravemuende/bbt-logo-webcomponent/assets/47693/0e
 
 - Customize size and colors as you like
 - SVG based
-- No dependencies
+- Plain Web Component without any library
 - Small bundle size: `9.94 kB │ gzip: 3.17 kB`
 - Supported by modern browsers
 - Use it with your favourite web framework

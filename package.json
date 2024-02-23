@@ -1,6 +1,6 @@
 {
   "name": "@bitcoinbeachtravemuende/bbt-logo",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "type": "module",
@@ -32,6 +32,9 @@
     "storybook": "^7.6.17",
     "typescript": "^5.2.2",
     "vite": "^5.1.0"
+  },
+  "dependencies": {
+    "@bitcoinbeachtravemuende/bitcoin-logo": "^0.1.0"
   },
   "customElements": "custom-elements.json"
 }
