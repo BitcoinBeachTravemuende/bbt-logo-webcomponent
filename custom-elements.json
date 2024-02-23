@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/bbt-logo.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "BBTLogo",
+          "members": [
+            {
+              "kind": "field",
+              "name": "shadowRoot",
+              "type": {
+                "text": "ShadowRoot"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Size to determine width and height of the logo",
+              "name": "size"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Background color of the lighthouse",
+              "name": "fill"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Stroke color of the lighthouse",
+              "name": "stroke"
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "bbt-logo",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "bbt-logo",
+          "declaration": {
+            "name": "BBTLogo",
+            "module": "src/bbt-logo.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "BBTLogo",
+            "module": "src/bbt-logo.ts"
+          }
+        }
+      ]
+    }
+  ]
+}
