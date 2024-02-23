@@ -16,7 +16,12 @@ const DEFAULT_SIZE = '140px'
 const DEFAULT_STROKE = 'black'
 const DEFAULT_FILL = 'white'
 
-const BBTLogo = class extends HTMLElement {
+/**
+ * @attribute {string} size Size to determine width and height of the logo
+ * @attribute {string} fill Background color of the lighthouse
+ * @attribute {string} stroke Stroke color of the lighthouse
+ */
+class BBTLogo extends HTMLElement {
 
   shadowRoot: ShadowRoot;
 
@@ -30,23 +35,24 @@ const BBTLogo = class extends HTMLElement {
   }
 
 
-  attributeChangedCallback(name: string, oldValue: string, newValue: string) {
+  attributeChangedCallback(name: string, oldValue: string, newValue: string) {  
     // dirty check
     if (oldValue === newValue) return
-
-    const wrapper = this.shadowRoot.querySelector('wrapper')
-    const lighthouse = this.shadowRoot.querySelector('lighthouse')
+    
+    const wrapper = this.shadowRoot.getElementById('wrapper')
+    const lighthouse = this.shadowRoot.getElementById('lighthouse')
     switch(name) {
       case 'size': {
-        wrapper?.setAttribute('style', '{width: newValue || DEFAULT_SIZE, height: newValue || DEFAULT_SIZE}')
+        wrapper?.style.setProperty('width', newValue || DEFAULT_SIZE)
+        wrapper?.style.setProperty('height', newValue || DEFAULT_SIZE)
         break;
       }
       case 'fill': {
-        lighthouse?.setAttribute('fill', newValue || DEFAULT_FILL)
+        lighthouse?.style.setProperty('fill', newValue || DEFAULT_FILL)
         break;
       }
       case 'stroke': {
-        lighthouse?.setAttribute('stroke', newValue || DEFAULT_STROKE)
+        lighthouse?.style.setProperty('color', newValue || DEFAULT_STROKE)
         break;
       }
     }
@@ -55,16 +61,17 @@ const BBTLogo = class extends HTMLElement {
 
   connectedCallback() {
     const wrapper = document.createElement('div')
-    wrapper.setAttribute('class', 'wrapper')
+    wrapper.setAttribute('id', 'wrapper')
     
+    // 
     const bg = document.createElement('div')
-    bg.setAttribute('class', 'bg')
+    bg.setAttribute('id', 'bg')
 
     const lighthouse = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    lighthouse.setAttribute('id', 'lighthouse')
     lighthouse.setAttribute('width', '100%')
     lighthouse.setAttribute('height', '100%')
     lighthouse.setAttribute('viewBox', '0 0 37.041667 37.041667')
-    lighthouse.setAttribute('class', 'lighthouse')
     lighthouse.innerHTML = `<g transform='translate(-10.311717,-4.1193979)'>
       <rect
         style='stroke-width:0.453158;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:normal'
@@ -149,10 +156,9 @@ const BBTLogo = class extends HTMLElement {
   
     const btcLogo = new BtcLogo()
     btcLogo.setAttribute('size', '100%')
-    btcLogo.setAttribute('class', 'btcLogo')
+    btcLogo.setAttribute('id', 'btcLogo')
 
     const style = document.createElement("style");
-    console.log(style.isConnected);
 
     style.textContent = `
       @keyframes lightfire-rotate {
@@ -167,7 +173,7 @@ const BBTLogo = class extends HTMLElement {
         }
       }
     
-      .wrapper {
+      #wrapper {
         position: relative;
         height: ${this.getAttribute("size") || DEFAULT_SIZE};
         width: ${this.getAttribute("size") || DEFAULT_SIZE};
@@ -175,7 +181,7 @@ const BBTLogo = class extends HTMLElement {
         border-radius: 9999px;
       }
       
-      .bg {
+      #bg {
         position: absolute;
         inset: -15%;
         top: -40%;
@@ -184,7 +190,7 @@ const BBTLogo = class extends HTMLElement {
         animation: lightfire-rotate 5s linear infinite;
       }
 
-      .lighthouse {
+      #lighthouse {
         position: absolute;
         inset: 0;
         z-index: 3;
@@ -193,7 +199,7 @@ const BBTLogo = class extends HTMLElement {
       }
       
       
-      .btcLogo {
+      #btcLogo {
         position: absolute;
         transform: translate(-50%, -50%);
         top: 35%;
