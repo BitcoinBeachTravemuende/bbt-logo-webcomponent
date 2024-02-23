@@ -1,4 +1,4 @@
-import BtcLogo from "./btc-logo";
+import BtcLogo from "@bitcoinbeachtravemuende/bitcoin-logo";
 
 export type Properties = {
   size?: string 

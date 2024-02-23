@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+dependencies:
+  '@bitcoinbeachtravemuende/bitcoin-logo':
+    specifier: ^0.1.0
+    version: 0.1.0
+
 devDependencies:
   '@custom-elements-manifest/analyzer':
     specifier: ^0.9.2
@@ -1317,6 +1322,10 @@ packages:
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
     dev: true
+
+  /@bitcoinbeachtravemuende/bitcoin-logo@0.1.0:
+    resolution: {integrity: sha512-qHEsNdp6KsDM4Rt+FsZ8A2cZyLtCOEODxX4OuCLs62hMQcQDbnSDGnJ7jguCb1Ilq28qkv/rMW5+1LozvsRe+g==}
+    dev: false
 
   /@colors/colors@1.5.0:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
