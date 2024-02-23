@@ -18,7 +18,7 @@ const DEFAULT_FILL = 'white'
 
 /**
  * @attribute {string} size Size to determine width and height of the logo
- * @attribute {string} fill Background color of the lighthouse
+ * @attribute {string} fill Background color of the lighthouse and logo
  * @attribute {string} stroke Stroke color of the lighthouse
  */
 class BBTLogo extends HTMLElement {
@@ -41,6 +41,7 @@ class BBTLogo extends HTMLElement {
     
     const wrapper = this.shadowRoot.getElementById('wrapper')
     const lighthouse = this.shadowRoot.getElementById('lighthouse')
+    const bg = this.shadowRoot.getElementById('bg')
     switch(name) {
       case 'size': {
         wrapper?.style.setProperty('width', newValue || DEFAULT_SIZE)
@@ -49,6 +50,7 @@ class BBTLogo extends HTMLElement {
       }
       case 'fill': {
         lighthouse?.style.setProperty('fill', newValue || DEFAULT_FILL)
+        bg?.style.setProperty('background-color', newValue || DEFAULT_FILL)
         break;
       }
       case 'stroke': {
