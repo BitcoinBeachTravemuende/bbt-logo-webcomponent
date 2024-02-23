@@ -20,7 +20,7 @@
         devShell = pkgs.mkShell {
           nativeBuildInputs = with pkgs; [
             nodejs_20
-            bun
+            nodePackages.pnpm
           ];
         };
       }
