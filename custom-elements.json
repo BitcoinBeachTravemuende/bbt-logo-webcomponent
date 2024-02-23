@@ -31,7 +31,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "Background color of the lighthouse",
+              "description": "Background color of the lighthouse and logo",
               "name": "fill"
             },
             {
