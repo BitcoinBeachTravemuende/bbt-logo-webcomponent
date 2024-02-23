@@ -95,27 +95,27 @@ Install [Nix](https://zero-to-flakes.com/install)
 
 #### Other
 
-Install [Bun](https://bun.sh/) or any other Node package manager (`pnpm`, `npm`, `yarn` or whatever)
+Install [`pnpm`](https://pnpm.io/) or any other Node package manager ([`bun`](https://bun.sh/), [`npm`](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm), [`yarn`](https://yarnpkg.com/) or whatever)
 
 ### Local build
 
 - Install dependencies (command might be different for other package manager)
 
 ```bash
-bun install
+pnpm install
 ```
 
 - Local build
 
 ```bash
-bun dev
+pnpm dev
 ```
 Open http://localhost:5173
 
 - Release build
 
 ```bash
-bun run build
+pnpm build
 ```
 Build sources land into `dist` folder.
 
@@ -123,7 +123,7 @@ Build sources land into `dist` folder.
 ## Storybook
 
 ```bash
-bun storybook
+pnpm storybook
 ```
 
 Open http://localhost:6006
